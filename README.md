@@ -11,7 +11,7 @@ The overall objective is to select input queries that maximise function outputs 
 
 This project is particularly relevant to my career interests as it develops skills in probabilistic modelling, optimisation under constraints, and iterative decision-making, which are highly applicable to data science, machine learning, and quantitative roles.
 
----
+
 
 ## 2. Inputs and Outputs
 
@@ -24,14 +24,14 @@ Each black-box function accepts a vector of continuous input values.
 
 Example inputs from Round 3:
 
-Function 1: [0.810000, 0.730000]
-Function 2: [0.620000, 0.820000]
-Function 3: [0.700000, 0.850000, 0.200000]
-Function 4: [0.410000, 0.400000, 0.370000, 0.450000]
-Function 5: [0.950000, 0.080000, 0.820000, 0.950000]
-Function 6: [0.520000, 0.150000, 0.600000, 0.880000, 0.050000]
-Function 7: [0.030000, 0.200000, 0.300000, 0.200000, 0.420000, 0.700000]
-Function 8: [0.400000, 0.080000, 0.380000, 0.050000, 0.780000, 0.080000, 0.090000, 0.050000]
+- **Function 1:** `[0.810000, 0.730000]`  
+- **Function 2:** `[0.620000, 0.820000]`  
+- **Function 3:** `[0.700000, 0.850000, 0.200000]`  
+- **Function 4:** `[0.410000, 0.400000, 0.370000, 0.450000]`  
+- **Function 5:** `[0.950000, 0.080000, 0.820000, 0.950000]`  
+- **Function 6:** `[0.520000, 0.150000, 0.600000, 0.880000, 0.050000]`  
+- **Function 7:** `[0.030000, 0.200000, 0.300000, 0.200000, 0.420000, 0.700000]`  
+- **Function 8:** `[0.400000, 0.080000, 0.380000, 0.050000, 0.780000, 0.080000, 0.090000, 0.050000]`  
 
 
 **Outputs**
@@ -41,14 +41,14 @@ Function 8: [0.400000, 0.080000, 0.380000, 0.050000, 0.780000, 0.080000, 0.09000
 
 Example outputs from Round 3:
 
-Function 1: -6.315914050868028e-31
-Function 2: 0.1551709649428233
-Function 3: -0.14601911938969364
-Function 4: -0.03231027880219939
-Function 5: 1820.0386226597477
-Function 6: -0.5790954443054444
-Function 7: 2.081316196964551
-Function 8: 9.38655
+- **Function 1:** `-6.315914050868028e-31`  
+- **Function 2:** `0.1551709649428233`  
+- **Function 3:** `-0.14601911938969364`  
+- **Function 4:** `-0.03231027880219939`  
+- **Function 5:** `1820.0386226597477`  
+- **Function 6:** `-0.5790954443054444`  
+- **Function 7:** `2.081316196964551`  
+- **Function 8:** `9.38655` 
 
 ---
 
