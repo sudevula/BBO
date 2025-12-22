@@ -50,8 +50,6 @@ Example outputs from Round 3:
 - **Function 7:** `2.081316196964551`  
 - **Function 8:** `9.38655` 
 
----
-
 ## 3. Challenge Objectives
 
 The objective of this project is to maximise each of the eight unknown functions over a fixed number of weekly queries.
@@ -65,7 +63,6 @@ This requires carefully balancing:
 - Exploration (learning about unknown regions)
 - Exploitation (refining high-performing areas)
 
----
 
 ## 4. Technical Approach
 
