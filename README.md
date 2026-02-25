@@ -11,9 +11,13 @@ The overall objective is to select input queries that maximise function outputs 
 
 This project is particularly relevant to my career interests as it develops skills in probabilistic modelling, optimisation under constraints, and iterative decision-making, which are highly applicable to data science, machine learning, and quantitative roles.
 
+## 2. Datasheet and Model Card
+Documentation for reproducibility and transparency:
 
+Datasheet.Md — Documents the BBO capstone dataset: motivation, composition, collection process, preprocessing, intended/inappropriate uses, and distribution/maintenance.
+Modelcard.md — Describes the optimisation approach: overview, intended use, strategy across the ten rounds, performance summary, assumptions and limitations, and ethical considerations.
 
-## 2. Inputs and Outputs
+## 3. Inputs and Outputs
 
 Each black-box function accepts a vector of continuous input values.
 
@@ -50,7 +54,7 @@ Example outputs from Round 3:
 - **Function 7:** `2.081316196964551`  
 - **Function 8:** `9.38655` 
 
-## 3. Challenge Objectives
+## 4. Challenge Objectives
 
 The objective of this project is to maximise each of the eight unknown functions over a fixed number of weekly queries.
 
@@ -64,7 +68,7 @@ This requires carefully balancing:
 - Exploitation (refining high-performing areas)
 
 
-## 4. Technical Approach
+## 5. Technical Approach (TBC)
 
 Early Iterations (Weeks 1–2)
 
@@ -86,7 +90,7 @@ Kernel SVMs also help capture non-linear boundaries in higher-dimensional functi
 
 Overall, my approach combines Bayesian optimisation, surrogate modelling, and classification-based intuition, evolving as more data is collected.
 
-## 5. Results So Far
+## 6. Results So Far (TBD)
 
 After three rounds of queries, the results suggest that the optimisation process is beginning to stabilise in several functions, while others still benefit from exploration.
 
