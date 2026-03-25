@@ -3,13 +3,24 @@
 
 ---
 
-## 1. Project Overview
+## 1. Project Overview 
 
-This capstone project focuses on **Black-Box Optimisation (BBO)**, where the goal is to optimise a set of unknown functions using a limited number of queries or evaluations. Each function represents a real-world scenario in which evaluating outcomes is expensive and slow, making brute-force search impractical.
+This capstone project focuses on **Black-Box Optimisation (BBO)**, where the objective is to maximise a set of unknown functions under strict evaluation constraints. Each function represents a real-world scenario in which evaluating outcomes is expensive and slow, making brute-force search impractical. Each function also represents a scenario where:
 
-The overall objective is to select input queries that maximise function outputs over time, using machine learning techniques to guide decision-making under uncertainty. This closely reflects real-world ML problems such as hyperparameter tuning, financial modelling, and scientific discovery.
+The underlying mathematical form is hidden
+Gradients are unavailable
+Evaluations are expensive and limited
 
-This project is particularly relevant to my career interests as it develops skills in probabilistic modelling, optimisation under constraints, and iterative decision-making, which are highly applicable to data science, machine learning, and quantitative roles.
+Only one query per function per week was permitted, creating a sequential decision-making problem under uncertainty.
+
+The overall objective is to select input queries that maximise function outputs over time, using machine learning techniques to guide decision-making under uncertainty. This mirrors real-world challenges such as:
+
+- Hyperparameter tuning
+- Financial risk optimisation
+- Experimental design
+- Scientific discovery
+
+Over the full competition, I refined an adaptive optimisation strategy across 13 rounds and achieved 1st place on Function 3, along with competitive performance across multiple other functions
 
 ## 2. Datasheet and Model Card
 Documentation for reproducibility and transparency:
@@ -68,41 +79,83 @@ This requires carefully balancing:
 - Exploration (learning about unknown regions)
 - Exploitation (refining high-performing areas)
 
+The challenge naturally reflects the exploration–exploitation trade-off studied in Bayesian optimisation and reinforcement learning.
 
-## 5. Technical Approach (TBC)
 
-Early Iterations (Weeks 1–2)
+## 5. Technical Approach 
 
-In the initial rounds, I focused on exploration-heavy strategies, using:
-- Gaussian Process (GP) surrogate models
-- Acquisition functions such as Upper Confidence Bound (UCB)
+**Early Iterations (Weeks 1–3)**
 
-This allowed me to model both predicted performance and uncertainty, helping avoid premature convergence to sub-optimal local maxima.
+Early Phase (Weeks 1–3): Exploration-Focused Bayesian Optimisation
 
-Later Iterations (Week 3 onwards)
+In early rounds, I prioritised uncertainty-aware modelling using:
 
-As more data became available, I refined the approach by:
-- Gradually adjusting exploration parameters toward exploitation
-- Comparing acquisition behaviour across functions
-- Introducing SVM-based thinking, framing the problem as separating high- vs low-performing regions rather than predicting exact outputs
+Gaussian Process (GP) surrogate models
+Upper Confidence Bound (UCB) acquisition
 
-Soft-margin SVMs are particularly useful in this setting, as outputs are noisy and imperfect.  
-Kernel SVMs also help capture non-linear boundaries in higher-dimensional functions.
+GPs allowed modelling both predicted mean and uncertainty.
+UCB enabled structured exploration while avoiding premature convergence.
 
-Overall, my approach combines Bayesian optimisation, surrogate modelling, and classification-based intuition, evolving as more data is collected.
+At this stage, the objective was to learn the shape of each function rather than aggressively exploit early local maxima.
 
-## 6. Results So Far (TBD)
+**Middle Phase (Weeks 4–9): Adaptive Refinement**
 
-After three rounds of queries, the results suggest that the optimisation process is beginning to stabilise in several functions, while others still benefit from exploration.
+As the dataset expanded:
 
-- Lower-dimensional functions (especially Functions 1, 2, and 4) show diminishing returns from repeated queries in similar regions, suggesting proximity to flat or near-optimal areas.
-- Higher-dimensional functions (Functions 5–8) remain more variable.  
-  - Function 5 continues to produce large outputs with noticeable fluctuations, indicating a complex surface with multiple local optima.
-  - Functions 7 and 8 consistently return relatively high values, suggesting the strategy is successfully identifying strong-performing regions, even though the global optimum remains uncertain.
+- Exploration parameters were gradually reduced
+- High-performing basins were refined via local search
+- Grid-based and structured proposals were introduced in promising regions
+- Function-specific behaviour began guiding strategy
+
+Importantly, I began treating each function differently rather than applying a uniform global policy.
+
+Key adjustments included:
+
+- Local grid refinement around strong basins
+- Reduced acquisition variance in stabilised functions
+- Increased exploration for ambiguous or flat functions
+
+**Late Phase (Weeks 10–13): Structured Exploitation & Stability**
+
+In the final rounds, the strategy became more disciplined:
+
+- Aggressive exploitation in stable high-performing basins
+- Minimal-risk perturbations around strong regions
+- Reduced variance in candidate proposals
+- Controlled convergence
+
+For Function 3, this structured refinement strategy proved highly effective, leading to top performance in the leaderboard.
+
+## 6. Results Summary
+
+After thirteen rounds of queries, the results were mixed-bag
+- first place in function 3
+- strong placement for functions 1 and 2
+- competitive results across multiple additional functions
+
+Observations- 
+- Lower-dimensional functions (especially Functions 1, 2, and 3) stablised relatively quickly
+- Higher-dimensional functions (Functions 5–8) remained more variable and required longer exploration phases.  
+  - Function 5 continued to produce large output till the end with noticeable fluctuations in the beginning with a sudden spike and then diminishing returns in the later phases.
 
 Overall, these results validate the use of Gaussian Process–based Bayesian optimisation with uncertainty-aware acquisition functions, while also highlighting the growing importance of:
 - Controlling exploration as the dataset expands
 - Considering alternative perspectives, such as classification-based models (SVMs), to efficiently distinguish high- and low-performing regions.
 
-- Controlling exploration as the dataset expands
-- Considering alternative perspectives, such as **classification-based models (SVMs)**, to efficiently distinguish high- and low-performing regions.
+## 8. Broader ML Relevance
+
+This capstone project demonstrates core machine learning principles:
+
+- Bayesian optimisation
+- Sequential decision-making
+- Exploration–exploitation trade-offs
+- Surrogate modelling under uncertainty
+- Adaptive hyperparameter control
+
+These skills directly translate to:
+
+- Hyperparameter tuning in deep learning
+- Automated ML systems
+- Risk modelling
+- Financial optimisation
+- Experimental design in research
